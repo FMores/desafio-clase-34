@@ -1,4 +1,6 @@
-const socket = io.connect();
+const socket = io.connect(window.location.origin);
+
+console.log('location:', window.location.origin);
 
 //*------ PARA MANEJO DE CHAT ------*//
 

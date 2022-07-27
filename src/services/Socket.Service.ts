@@ -5,7 +5,6 @@ import { Server as httpServer } from 'http';
 import { logger } from '../utils/winston.logger';
 
 //Datos utiles
-
 //Para responder a un solo cliente => socket.emit('peticion', respuesta)
 //Para responder a todos => this.ioServer.emit('peticion', respuesta)
 //Para responder a todos menos al que envia el mensaje => socket.broadcast.emit('peticion', respuesta)
