@@ -1,7 +1,7 @@
 import { mongoConnection } from './services/Mongo.Service';
 import { mysql_service } from './services/MySQL.Service';
 import { PersistenceType } from './DAO/interfaces';
-//import { ioService } from './services/Socket.Service';
+import { ioService } from './services/Socket.Service';
 import { logger } from './utils/winston.logger';
 import { httpServer } from './services/server';
 import config from './config';
@@ -10,7 +10,7 @@ import os from 'os';
 
 const numCPUs = os.cpus().length;
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 if (cluster.isPrimary && config.SERVER_MODE === 'cluster') {
 	const cpuToUse: number = 4;
@@ -31,7 +31,7 @@ if (cluster.isPrimary && config.SERVER_MODE === 'cluster') {
 	httpServer.listen(PORT, () => {
 		logger.info(`Server runnign on port:${PORT} => PID WORKER:${process.pid}`);
 		//mongoConnection(PersistenceType.Mongo);
-		//ioService.init(httpServer);
+		ioService.init(httpServer);
 		//mysql_service.init();
 	});
 }
