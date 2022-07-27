@@ -19,6 +19,13 @@ export interface ProductI {
 	timestamp?: string;
 }
 
+export interface IProduct {
+	id?: number;
+	title: string;
+	price: number;
+	thumbnail: string;
+}
+
 export interface CommonMethodsDAO {
 	get(id?: string): Promise<ProductI[]>;
 	add(data: NewProductI): Promise<ProductI>;

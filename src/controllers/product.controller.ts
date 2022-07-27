@@ -1,27 +1,15 @@
-import { mysql_service } from '../services/MySQL.Service';
-
-interface IProduct {
-	id?: number;
-	title: string;
-	price: number;
-	thumbnail: string;
-}
+import { logger } from '../utils/winston.logger';
+import { product_api } from '../api/product.api';
+import { IProduct } from '../DAO/interfaces';
 
 class Product_controller {
-	constructor(private table_name: string = 'products') {}
+	public async get() {
+		return await product_api.get();
+	}
 
-	public getAll = async () => {
-		const current_product_list = await mysql_service.get_all(this.table_name);
-		if (current_product_list.length > 0) {
-			return current_product_list;
-		} else {
-			return null;
-		}
-	};
-
-	public save = async (new_product_data: IProduct) => {
-		await mysql_service.save(new_product_data, this.table_name);
-	};
+	public async add(new_product_data: IProduct) {
+		await product_api.add(new_product_data);
+	}
 }
 
 export const product_Controller = new Product_controller();

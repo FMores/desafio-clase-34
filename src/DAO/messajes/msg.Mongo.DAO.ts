@@ -1,7 +1,7 @@
-import { IMessage, PersistenceType } from './interfaces';
-import mongodbMessageModel from '../models/mongo.msg.model';
-import { mongoConnection } from '../services/Mongo.Service';
-import { date_creator } from '../utils/date.creator';
+import { IMessage, PersistenceType } from '../interfaces';
+import mongodbMessageModel from '../../models/mongo.msg.model';
+import { mongoConnection } from '../../services/Mongo.Service';
+import { date_creator } from '../../utils/date.creator';
 
 export class MsgMongoDAO {
 	private msg: any;

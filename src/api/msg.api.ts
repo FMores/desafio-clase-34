@@ -1,6 +1,6 @@
 import { logger } from '../utils/winston.logger';
 import { IMessage, PersistenceType } from '../DAO/interfaces';
-import { MsgFactory } from '../DAO/msg.factory';
+import { MsgFactory } from '../DAO/messajes/msg.factory';
 
 // Argumentos valirdos para MsgFactory.get()
 // PersistenceType.FireBase

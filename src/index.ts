@@ -30,8 +30,6 @@ if (cluster.isPrimary && config.SERVER_MODE === 'cluster') {
 } else {
 	httpServer.listen(PORT, () => {
 		logger.info(`Server runnign on port:${PORT} => PID WORKER:${process.pid}`);
-		//mongoConnection(PersistenceType.Mongo);
 		ioService.init(httpServer);
-		//mysql_service.init();
 	});
 }

@@ -1,6 +1,6 @@
-import { fireBaseConnection } from '../services/FireBase.Service';
-import { IMessage } from './interfaces';
-import { date_creator } from '../utils/date.creator';
+import { fireBaseConnection } from '../../services/FireBase.Service';
+import { IMessage } from '../interfaces';
+import { date_creator } from '../../utils/date.creator';
 
 export class FireBaseMsgDAO {
 	private db: any;

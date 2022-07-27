@@ -1,36 +1,29 @@
+import { ProductFactory } from '../DAO/products/product.factory';
+import { IProduct, PersistenceType } from '../DAO/interfaces';
 import { logger } from '../utils/winston.logger';
-import { mysql_service } from '../services/MySQL.Service';
-
-interface IProduct {
-	id?: number;
-	title: string;
-	price: number;
-	thumbnail: string;
-}
 
 class ProductsApi {
-	constructor(private table_name: string = 'products') {}
+	private product: any;
 
-	public getAll = async () => {
-		try {
-			const current_product_list = await mysql_service.get_all(this.table_name);
-			if (current_product_list.length > 0) {
-				return current_product_list;
-			} else {
-				return null;
-			}
-		} catch (err: any) {
-			logger.error(`Class ProductApi function getAll() => error= ${err.message}`);
-		}
-	};
+	constructor() {
+		this.product = ProductFactory.get(PersistenceType.Mongo_Atlas);
+	}
 
-	public save = async (new_product_data: IProduct) => {
+	public async get() {
 		try {
-			await mysql_service.save(new_product_data, this.table_name);
+			return await this.product.get();
 		} catch (err: any) {
-			logger.error(`Class ProductApi function save() => error= ${err.message}`);
+			logger.error(`ProductApi => get func. error: ${err.message}`);
 		}
-	};
+	}
+
+	public async add(new_product_data: IProduct) {
+		try {
+			await this.product.add(new_product_data);
+		} catch (err: any) {
+			logger.error(`ProductApi => add func. error: ${err.message}`);
+		}
+	}
 }
 
 export const product_api = new ProductsApi();

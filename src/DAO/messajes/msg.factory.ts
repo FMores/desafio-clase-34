@@ -1,9 +1,9 @@
 import { MsgFileSystemDAO } from './msg.Fs.DAO';
 import { FireBaseMsgDAO } from './msg.FireBase.DAO';
 import { MsgMongoDAO } from './msg.Mongo.DAO';
-import { PersistenceType } from './interfaces';
+import { PersistenceType } from '../interfaces';
 import path from 'path';
-import { logger } from '../utils/winston.logger';
+import { logger } from '../../utils/winston.logger';
 
 export class MsgFactory {
 	static get(type?: PersistenceType) {

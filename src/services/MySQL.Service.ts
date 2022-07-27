@@ -26,7 +26,7 @@ class MySQL_service {
 				});
 			}
 		} catch (err: any) {
-			logger.error(`class MySQL init error= ${err.message}`);
+			logger.error(`class MySQL init error: ${err.message}`);
 		}
 	};
 
