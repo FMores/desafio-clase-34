@@ -10,7 +10,7 @@ import os from 'os';
 
 const numCPUs = os.cpus().length;
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 if (cluster.isPrimary && config.SERVER_MODE === 'cluster') {
 	const cpuToUse: number = 4;
