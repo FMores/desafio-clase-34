@@ -4,7 +4,7 @@ import { PersistenceType } from './DAO/interfaces';
 import { ioService } from './services/Socket.Service';
 import { logger } from './utils/winston.logger';
 import { httpServer } from './services/server';
-import config, { yargs } from './config';
+import config from './config';
 import cluster from 'cluster';
 import os from 'os';
 
