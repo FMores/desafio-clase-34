@@ -28,11 +28,11 @@ class IoService {
 				});
 
 				// Produc List
-				socket.emit('product-list', await product_Controller.getAll());
-				socket.on('new_product', async (data) => {
-					await product_Controller.save(data);
-					this.ioServer?.emit('product-list', await product_Controller.getAll());
-				});
+				// socket.emit('product-list', await product_Controller.getAll());
+				// socket.on('new_product', async (data) => {
+				// 	await product_Controller.save(data);
+				// 	this.ioServer?.emit('product-list', await product_Controller.getAll());
+				// });
 			});
 		}
 	};
