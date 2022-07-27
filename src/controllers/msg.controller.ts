@@ -1,14 +1,14 @@
-// import { IMessage } from 'src/DAO/interfaces';
-// import { msg_api } from '../api/msg.api';
+import { IMessage } from 'src/DAO/interfaces';
+import { msg_api } from '../api/msg.api';
 
-// class MsgController {
-// 	public async get() {
-// 		return await msg_api.get();
-// 	}
+class MsgController {
+	public async get() {
+		return await msg_api.get();
+	}
 
-// 	public async add(new_msg: IMessage): Promise<void> {
-// 		await msg_api.add(new_msg);
-// 	}
-// }
+	public async add(new_msg: IMessage): Promise<void> {
+		await msg_api.add(new_msg);
+	}
+}
 
-// export const msgController = new MsgController();
+export const msgController = new MsgController();

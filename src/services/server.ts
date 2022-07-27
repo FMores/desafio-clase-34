@@ -10,7 +10,6 @@ import session from 'express-session';
 import config from '../config';
 import { Server } from 'http';
 import path from 'path';
-import cors from 'cors';
 
 export const app = express();
 
@@ -24,7 +23,6 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.resolve(__dirname, '../../views'));
 
-app.use(cors());
 app.use(compression());
 app.use(express.static(path.resolve(__dirname, '../../public')));
 app.use(express.json());
