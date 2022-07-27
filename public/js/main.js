@@ -1,4 +1,4 @@
-const socket = io.connect(window.location.hostname);
+const socket = io.connect();
 
 //*------ PARA MANEJO DE CHAT ------*//
 
@@ -123,11 +123,11 @@ socket.on('fake-product-list', (fakeProducts) => {
 //*------ PARA EL MANEJO DE LOGIN ------*//
 
 const logout_function = () => {
-	window.location.href = 'http://localhost:8080/api/auth/logout';
+	window.location.href = '/api/auth/logout';
 };
 
 const error_timer = () => {
 	setTimeout(() => {
-		window.location.href = 'http://localhost:8080/api/auth/login';
+		window.location.href = '/api/auth/login';
 	}, 3000);
 };
