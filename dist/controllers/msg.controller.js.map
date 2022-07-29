@@ -1,0 +1,1 @@
+{"version":3,"file":"msg.controller.js","sourceRoot":"","sources":["../../src/controllers/msg.controller.ts"],"names":[],"mappings":";;;AACA,4CAAyC;AAEzC,MAAM,aAAa;IACX,KAAK,CAAC,GAAG;QACf,OAAO,MAAM,iBAAO,CAAC,GAAG,EAAE,CAAC;IAC5B,CAAC;IAEM,KAAK,CAAC,GAAG,CAAC,OAAiB;QACjC,MAAM,iBAAO,CAAC,GAAG,CAAC,OAAO,CAAC,CAAC;IAC5B,CAAC;CACD;AAEY,QAAA,aAAa,GAAG,IAAI,aAAa,EAAE,CAAC"}
